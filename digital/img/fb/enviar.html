@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Enviar imágenes</title>
+<style>
+  body{font-family:system-ui,sans-serif;background:#1E1D1A;color:#F8F7F2;margin:0;padding:16px}
+  button{background:#B88F6A;color:#1E1D1A;border:0;padding:14px 18px;font-weight:700;font-size:16px;border-radius:4px;cursor:pointer;margin:0 8px 8px 0}
+  #st{margin-top:14px;font-family:monospace}
+</style>
+</head>
+<body>
+<button id="open">Abrir Facebook</button>
+<button id="sA">Enviar A</button>
+<button id="sB">Enviar B</button>
+<button id="sC">Enviar C</button>
+<p id="st">Listo</p>
+<script>
+var w=null, st=document.getElementById('st');
+var sets={A:['A1','A2','A3','A4'],B:['B1','B2','B3'],C:['C1','C2','C3'],D:['D1','D2','D3','D4','D5']};
+document.getElementById('open').onclick=function(){
+  w=window.open('https://www.facebook.com/profile.php?id=61595700734420','synkfb');
+  st.textContent=w?'Facebook abierto':'No se pudo abrir';
+};
+function send(k){
+  if(!w||w.closed){st.textContent='Primero abre Facebook';return;}
+  Promise.all(sets[k].map(function(n){return fetch(n+'.jpg').then(function(r){return r.arrayBuffer();}).then(function(b){return {name:n+'.jpg',buf:b};});}))
+  .then(function(files){w.postMessage({synk:true,set:k,files:files},'https://www.facebook.com');st.textContent='Enviado '+k+' ('+files.length+')';})
+  .catch(function(e){st.textContent='Error '+e;});
+}
+['A','B','C'].forEach(function(k){document.getElementById('s'+k).onclick=function(){send(k);};});
+// Inside an iframe: send the requested set to the parent page automatically.
+var q=new URLSearchParams(location.search).get('set');
+if(window.parent!==window && q && sets[q]){
+  Promise.all(sets[q].map(function(n){return fetch(n+'.jpg').then(function(r){return r.arrayBuffer();}).then(function(b){return {name:n+'.jpg',buf:b};});}))
+  .then(function(files){window.parent.postMessage({synk:true,set:q,files:files},'https://www.facebook.com');st.textContent='Enviado '+q;});
+}
+</script>
+</body>
+</html>

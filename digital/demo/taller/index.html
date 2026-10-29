@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Talleres Ponent Motor · Web de ejemplo</title>
+<meta name="description" content="Web de ejemplo de SYNK Digital para un taller mecánico, con presupuesto online. Negocio ficticio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#F5F6F8;--white:#fff;--ink:#121822;--mute:#5B6573;--blue:#1B4DFF;--orange:#FF6A1A;--line:#DDE1E7;--sans:"Archivo",system-ui,sans-serif;--mono:"JetBrains Mono",monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.02;letter-spacing:-.02em}
+p{margin:0}
+.demo{background:var(--ink);color:#fff;font-size:.82rem;text-align:center;padding:8px 16px}
+.demo a{color:#9DB4FF}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.top{background:var(--white);border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.25rem;text-decoration:none;text-transform:uppercase}
+.logo i{width:34px;height:34px;background:var(--blue);display:grid;place-items:center;color:#fff;font-style:normal;border-radius:8px}
+.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:800;text-decoration:none;padding:14px 22px;border-radius:10px;border:0;cursor:pointer;font-family:var(--sans);font-size:1rem}
+.btn.blue{background:var(--blue)}
+.btn.line{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.hero{background:var(--white);padding:50px 0 70px}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:900}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p{color:var(--mute);font-size:1.12rem;max-width:44ch;margin-top:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.fact{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px}
+.fact b{display:block;font-size:2.2rem;font-weight:900;color:var(--blue);line-height:1}
+.fact span{color:var(--mute);font-size:.92rem}
+.fact.o b{color:var(--orange)}
+section{padding:70px 0}
+.lab{font-family:var(--mono);font-size:.8rem;color:var(--blue);text-transform:uppercase;letter-spacing:.1em}
+h2{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:900;margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.card .ic{width:44px;height:44px;border-radius:10px;background:#E8EEFF;color:var(--blue);display:grid;place-items:center;font-weight:900}
+.card h3{font-size:1.25rem;font-weight:800}
+.card p{color:var(--mute);font-size:.95rem}
+.card .from{margin-top:auto;font-family:var(--mono);font-size:.85rem;color:var(--ink)}
+.quote{background:var(--ink);color:#fff;border-radius:22px;padding:40px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+.quote h2{color:#fff}
+.quote p.s{color:#A9B2C0;margin-top:14px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:6px;font-size:.88rem;font-weight:600;color:#C9D0DA}
+input,select,textarea{font:inherit;padding:12px 14px;border-radius:10px;border:1px solid #2C3646;background:#1A2230;color:#fff}
+.full{grid-column:1/-1}
+#ok{grid-column:1/-1;color:#7FE3A0;font-weight:600;min-height:1.4em}
+.itv{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:#FFF1E8;border:1px solid #FFD2B8;border-radius:16px;padding:22px 26px;margin-top:30px}
+.itv b{color:var(--orange)}
+footer{padding:30px 0;color:var(--mute);font-size:.9rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hrow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.hrow.now{color:var(--blue);font-weight:800}
+@media (max-width:860px){#ab{grid-template-columns:1fr!important}.hero .grid,.quote{grid-template-columns:1fr}.cards{grid-template-columns:1fr}form{grid-template-columns:1fr}.quote{padding:26px}}
+</style>
+</head>
+<body>
+<div class="demo">Web de ejemplo creada por <a href="/digital/">SYNK Digital</a> · negocio ficticio</div>
+<div class="top"><div class="wrap"><nav><a class="logo" href="#"><i>P</i>Ponent Motor</a><a class="btn" href="#presupuesto">Pedir presupuesto</a></nav></div></div>
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="lab">Taller mecánico multimarca</span>
+      <h1>Tu coche, a punto <em>y con precio cerrado.</em></h1>
+      <p>Mecánica, revisiones, neumáticos y pre-ITV. Te damos el presupuesto antes de tocar nada y te avisamos por WhatsApp cuando está listo.</p>
+      <div class="cta"><a class="btn" href="#presupuesto">Pedir presupuesto</a><a class="btn line" href="#servicios">Ver servicios</a></div>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>24 h</b><span>Plazo habitual de revisión</span></div>
+      <div class="fact o"><b>0 €</b><span>Diagnóstico si haces la reparación</span></div>
+      <div class="fact o"><b>1 año</b><span>Garantía en mano de obra</span></div>
+      <div class="fact"><b>L–J</b><span>8:00 a 18:00, sin cerrar al mediodía</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="servicios">
+  <div class="wrap">
+    <span class="lab">Servicios</span><h2>Lo que hacemos</h2>
+    <div class="cards">
+      <div class="card"><div class="ic">01</div><h3>Revisión y aceite</h3><p>Cambio de aceite y filtros, revisión de 30 puntos.</p><span class="from">desde 89 €</span></div>
+      <div class="card"><div class="ic">02</div><h3>Frenos</h3><p>Pastillas, discos y líquido, con piezas de calidad.</p><span class="from">desde 120 €</span></div>
+      <div class="card"><div class="ic">03</div><h3>Neumáticos</h3><p>Montaje, equilibrado y alineado. Todas las medidas.</p><span class="from">desde 55 €/ud</span></div>
+      <div class="card"><div class="ic">04</div><h3>Pre-ITV</h3><p>Lo revisamos antes para que pases a la primera.</p><span class="from">desde 35 €</span></div>
+      <div class="card"><div class="ic">05</div><h3>Diagnosis</h3><p>Lectura de averías y testigos del cuadro.</p><span class="from">desde 40 €</span></div>
+      <div class="card"><div class="ic">06</div><h3>Aire acondicionado</h3><p>Carga de gas y revisión de fugas.</p><span class="from">desde 70 €</span></div>
+    </div>
+    <div class="itv"><p><b>¿Cuándo te toca la ITV?</b> Déjanos tu matrícula y te avisamos un mes antes.</p><a class="btn blue" href="#presupuesto">Avísame</a></div>
+  </div>
+</section>
+
+<section id="nosotros" style="padding-top:0">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:20px" id="ab">
+    <div class="card" style="padding:30px">
+      <span class="lab">Quiénes somos</span>
+      <h2 style="font-size:2rem">Un taller familiar desde 1998</h2>
+      <p>Jordi y Núria llevan el taller con tres mecánicos. Trabajamos con todas las marcas, gasolina, diésel e híbridos, y explicamos cada reparación con fotos de la pieza.</p>
+      <p>Atendemos a particulares, autónomos con furgoneta y pequeñas flotas de empresa, con recogida del vehículo si lo necesitas.</p>
+    </div>
+    <div class="card" style="padding:30px">
+      <span class="lab">Horario</span>
+      <h2 style="font-size:2rem">Cuándo estamos</h2>
+      <div id="hr"></div>
+      <p style="margin-top:8px">Polígono industrial, nave 00 · 25000 Lleida · 973 00 00 00</p>
+    </div>
+  </div>
+</section>
+
+<section id="presupuesto">
+  <div class="wrap quote">
+    <div><span class="lab" style="color:#9DB4FF">Presupuesto online</span><h2>Cuéntanos qué le pasa</h2><p class="s">Te respondemos con un precio cerrado en menos de 24 horas laborables.</p></div>
+    <form id="f">
+      <label>Nombre<input required autocomplete="name"></label>
+      <label>Teléfono<input required type="tel" autocomplete="tel"></label>
+      <label>Matrícula<input placeholder="0000 ABC"></label>
+      <label>Servicio<select><option>Revisión</option><option>Frenos</option><option>Neumáticos</option><option>Pre-ITV</option><option>Avería / diagnosis</option><option>Otro</option></select></label>
+      <label class="full">¿Qué le pasa al coche?<textarea rows="3"></textarea></label>
+      <button class="btn full" type="submit">Enviar</button>
+      <p id="ok" role="status"></p>
+    </form>
+  </div>
+</section>
+<footer><div class="wrap"><span>Talleres Ponent Motor · negocio ficticio</span><span>Web diseñada por <a href="/digital/">SYNK Digital</a></span></div></footer>
+<script>
+var HR=[["Lunes","8:00 – 18:00"],["Martes","8:00 – 18:00"],["Miércoles","8:00 – 18:00"],["Jueves","8:00 – 18:00"],["Viernes","8:00 – 15:00"],["Sábado","Con cita: 9:00 – 13:00"],["Domingo","Cerrado"]],td=(new Date().getDay()+6)%7;
+document.getElementById('hr').innerHTML=HR.map(function(h,i){return '<div class="hrow'+(i===td?' now':'')+'"><span>'+h[0]+'</span><span>'+h[1]+'</span></div>';}).join('');
+document.getElementById('f').onsubmit=function(e){e.preventDefault();document.getElementById('ok').textContent='Ejemplo: en la web real, la solicitud llegaría al taller por correo o WhatsApp.';};</script>
+</body>
+</html>

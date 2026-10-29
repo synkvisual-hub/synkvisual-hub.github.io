@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://synkvisualstudio.netlify.app/sitemap.xml

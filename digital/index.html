@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SYNK Digital · Webs y apps para empresas</title>
+<meta name="description" content="Diseño de páginas web, aplicaciones y contenido para empresas pequeñas y grandes. Precio cerrado, trato directo y entrega rápida. Una línea de SYNK.">
+<link rel="canonical" href="https://synkvisualstudio.netlify.app/digital/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SYNK Digital · Webs y apps para empresas">
+<meta property="og:description" content="Webs, aplicaciones y contenido para empresas, con precio cerrado desde el primer mensaje.">
+<meta property="og:url" content="https://synkvisualstudio.netlify.app/digital/">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="/app/favicon.png">
+<link rel="apple-touch-icon" href="/app/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..700&family=Hanken+Grotesk:wght@300..700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Synk Digital: same ink/paper/copper system as SYNK Interiores, so both read as one studio.
+   Sub-brand difference is carried by the wordmark and by mono "code" details, not by a new palette. */
+:root{
+  --bg:#1E1D1A;--bg2:#27251F;--fg:#F8F7F2;--mute:#A89B8C;--accent:#B88F6A;--on-accent:#1E1D1A;
+  --line:rgba(248,247,242,.16);
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){--bg:#F8F7F2;--bg2:#EEECE4;--fg:#1E1D1A;--mute:#6A5F52;--accent:#8C6038;--on-accent:#F8F7F2;--line:rgba(30,29,26,.18);color-scheme:light}
+}
+:root[data-theme="light"]{--bg:#F8F7F2;--bg2:#EEECE4;--fg:#1E1D1A;--mute:#6A5F52;--accent:#8C6038;--on-accent:#F8F7F2;--line:rgba(30,29,26,.18);color-scheme:light}
+:root[data-theme="dark"]{--bg:#1E1D1A;--bg2:#27251F;--fg:#F8F7F2;--mute:#A89B8C;--accent:#B88F6A;--on-accent:#1E1D1A;--line:rgba(248,247,242,.16);color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;margin:0;padding-top:env(safe-area-inset-top,0px)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+section{padding-block:clamp(56px,9vw,112px)}
+.rule{border-top:1px solid var(--line)}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:1.5rem;letter-spacing:.22em;text-decoration:none}
+.brand b{color:var(--accent);font-weight:400}
+.brand small{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.38em;color:var(--mute);margin-top:2px}
+.nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap;font-size:.92rem}
+.nav a{text-decoration:none;color:var(--mute)}
+.nav a:hover{color:var(--fg)}
+.nav a.btn{color:var(--on-accent)}
+
+.btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:.95rem;text-decoration:none;padding:13px 22px;background:var(--accent);color:var(--on-accent);border:1px solid var(--accent);border-radius:2px;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--fg)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+
+/* hero */
+.hero{padding-block:clamp(28px,5vw,64px) clamp(56px,8vw,104px)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero-grid>*{min-width:0}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.9rem);margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:1.14rem;color:var(--mute);max-width:46ch;margin-top:24px}
+
+/* real screenshots in a browser frame, plus a phone for the app */
+.frame img{display:block;width:100%;height:auto}
+.showcase{margin:0;position:relative;padding:0 0 48px 0}
+.showcase .frame{margin-right:56px}
+.showcase .phone{position:absolute;right:0;bottom:0;width:30%;max-width:190px;border:6px solid #0f0e0c;border-radius:26px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45);background:#0f0e0c}
+.showcase .phone img{display:block;width:100%;height:auto;aspect-ratio:600/1100;object-fit:cover;object-position:top}
+.showcase figcaption{margin-top:12px;max-width:62%}
+.demos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px)}
+.demos article{min-width:0}
+.demos .frame{display:block;text-decoration:none}
+.demos .frame img{aspect-ratio:16/10;object-fit:cover;object-position:top}
+.demos h3{font-size:1.3rem;margin-top:16px}
+.demos p{color:var(--mute);font-size:.95rem;margin-top:6px}
+.demos a.more{display:inline-block;margin-top:12px;font-weight:600;font-size:.95rem;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
+@media (max-width:900px){.demos{grid-template-columns:1fr}}
+.work .frame img{aspect-ratio:16/10;object-fit:cover;object-position:top}
+/* browser frame */
+.frame{border:1px solid var(--line);background:var(--bg2);border-radius:6px;overflow:hidden}
+.frame .bar{display:flex;align-items:center;gap:7px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.frame .bar i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block}
+.frame .bar span{margin-left:10px;font-family:var(--mono);font-size:.7rem;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(40px,6vw,72px);border-top:1px solid var(--line)}
+.pillars div{padding:20px 20px 0 0}
+.pillars div+div{padding-left:20px;border-left:1px solid var(--line)}
+.pillars h3{font-size:1.25rem}
+.pillars p{color:var(--mute);font-size:.95rem;margin-top:6px}
+
+.head{max-width:62ch;margin-bottom:clamp(28px,4vw,48px)}
+.head h2{font-size:clamp(2rem,4.4vw,3.2rem);margin-top:14px}
+.head p{color:var(--mute);margin-top:14px}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.svc article{border-top:1px solid var(--fg);padding-top:18px;min-width:0}
+.svc .n{font-family:var(--mono);font-size:.8rem;color:var(--accent);letter-spacing:.1em}
+.svc h3{font-size:1.6rem;margin-top:10px}
+.svc p{color:var(--mute);margin-top:10px;font-size:.97rem}
+.svc ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px;font-size:.93rem}
+.svc li{padding-left:18px;position:relative}
+.svc li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--accent)}
+
+/* work */
+.work{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px)}
+.work article{min-width:0}
+.work h3{font-size:1.4rem;margin-top:16px}
+.work p{color:var(--mute);font-size:.95rem;margin-top:6px}
+.work .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.work .tags span{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);padding:4px 8px;color:var(--mute)}
+.work a.more{display:inline-block;margin-top:14px;font-weight:600;font-size:.95rem;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.step{padding:22px 22px 0 0;min-width:0}
+.step+.step{padding-left:22px;border-left:1px solid var(--line)}
+.step .n{font-family:var(--mono);font-size:.8rem;color:var(--accent);letter-spacing:.1em}
+.step h3{font-size:1.3rem;margin-top:10px}
+.step p{color:var(--mute);font-size:.95rem;margin-top:8px}
+
+/* packages */
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);align-items:stretch}
+.pack{border:1px solid var(--line);padding:28px 26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.pack.main{background:var(--bg2);border-color:var(--accent)}
+.pack h3{font-size:1.5rem}
+.pack .for{color:var(--mute);font-size:.92rem;margin-top:-6px}
+.price{font-family:var(--display);font-size:2.4rem;letter-spacing:-.03em;line-height:1}
+.price s{display:block;font-family:var(--body);font-size:1rem;letter-spacing:0;color:var(--mute);margin-bottom:6px;text-decoration-thickness:1px}
+.launch{display:inline-block;margin-top:18px!important;font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;color:var(--on-accent)!important;background:var(--accent);padding:7px 12px}
+.price small{display:block;font-family:var(--body);font-size:.85rem;color:var(--mute);letter-spacing:0;margin-top:8px}
+.pack ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:9px;font-size:.95rem}
+.pack li{padding-left:18px;position:relative}
+.pack li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--accent)}
+.pack .btn{margin-top:auto;text-align:center}
+
+.extras{margin-top:clamp(20px,3vw,32px);border-top:1px solid var(--line)}
+.extras>div{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.extras h3{font-size:1.15rem}
+.extras p{color:var(--mute);font-size:.92rem;margin-top:4px}
+.extras strong{font-family:var(--display);font-weight:400;font-size:1.3rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.extras strong small{font-family:var(--body);font-size:.78rem;color:var(--mute);margin-left:4px}
+.note{font-size:.88rem;color:var(--mute);margin-top:18px;max-width:72ch}
+
+/* faq */
+.faq{max-width:760px}
+details{border-top:1px solid var(--line);padding:18px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-family:var(--display);font-size:1.2rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--mute);margin-top:12px;max-width:62ch}
+
+/* contact */
+.contact{background:var(--bg2)}
+.contact h2{font-size:clamp(2.1rem,5vw,3.8rem);max-width:18ch}
+.send{margin-top:26px;padding:0;list-style:none;display:grid;gap:8px;color:var(--mute);font-size:.97rem;max-width:58ch}
+.send li::before{content:"→ ";color:var(--accent)}
+.mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:30px}
+.mail code{font-family:var(--mono);font-size:clamp(.95rem,2.6vw,1.2rem);padding:12px 16px;border:1px solid var(--line);user-select:all;word-break:break-all}
+#copied{font-family:var(--mono);font-size:.78rem;color:var(--accent);min-height:1em;margin-top:10px}
+.consent{font-size:.84rem;color:var(--mute);margin-top:16px;max-width:60ch}
+.consent a{color:var(--fg)}
+
+footer{padding-block:34px;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.88rem;color:var(--mute)}
+.foot a{text-decoration:none;margin-right:18px}
+.foot a:hover{color:var(--fg)}
+
+@media (max-width:900px){
+  .hero-grid,.work{grid-template-columns:1fr}
+  .svc,.pk{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(3){border-left:0;padding-left:0}
+  .step:nth-child(n+3){border-top:1px solid var(--line);margin-top:22px;padding-top:22px}
+}
+@media (max-width:560px){
+  .pillars{grid-template-columns:1fr}
+  .pillars div,.pillars div+div{padding:16px 0;border-left:0;border-top:1px solid var(--line)}
+  .pillars div:first-child{border-top:0}
+  .steps{grid-template-columns:1fr}
+  .step,.step+.step{padding:20px 0;border-left:0;border-top:1px solid var(--line);margin-top:0}
+  .step:first-child{border-top:0}
+  .nav{gap:16px}
+  .extras>div{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="brand" href="/digital/" aria-label="SYNK Digital, inicio">S<b>Y</b>NK<small>DIGITAL</small></a>
+  <nav class="nav" aria-label="Principal">
+    <a href="#servicios">Servicios</a>
+    <a href="#trabajos">Trabajos</a>
+    <a href="#precios">Precios</a>
+    <a href="/">Interiores</a>
+    <a class="btn" href="#contacto">Pide presupuesto</a>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="label">Webs · apps · contenido para empresas</span>
+          <h1>Webs y apps a medida <em>para tu negocio.</em></h1>
+          <p class="lead">Diseñamos y publicamos páginas web y aplicaciones para empresas pequeñas y grandes, y también el contenido para tus redes. Precio cerrado desde el primer mensaje y trato directo con quien lo hace.</p>
+          <div class="cta">
+            <a class="btn" href="#contacto">Pide presupuesto</a>
+            <a class="btn ghost" href="#precios">Ver precios</a>
+          </div>
+        </div>
+        <figure class="showcase">
+          <div class="frame">
+            <div class="bar"><i></i><i></i><i></i><span>synkvisualstudio.netlify.app</span></div>
+            <img src="/digital/img/web-synk.webp" width="1600" height="1000" alt="Web de SYNK Interiores diseñada por nosotros, vista en el ordenador">
+          </div>
+          <div class="phone"><img src="/digital/img/app-synk-movil.webp" width="600" height="1298" alt="App SYNK Studio abierta en el móvil"></div>
+          <figcaption><span class="label">Nuestra web y nuestra app, hechas por SYNK Digital</span></figcaption>
+        </figure>
+      </div>
+      <div class="pillars">
+        <div><h3>Precio cerrado</h3><p>Sabes lo que pagas antes de empezar. Sin horas sueltas ni sorpresas.</p></div>
+        <div><h3>Lista en días</h3><p>Una landing en 5 a 7 días laborables desde que tenemos tus textos y fotos.</p></div>
+        <div><h3>Pensada para el móvil</h3><p>Rápida, legible en cualquier pantalla y preparada para que Google la encuentre.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="rule">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Servicios</span>
+        <h2>Tres cosas, bien hechas</h2>
+        <p>Trabajamos para negocios pequeños que necesitan su primera web y para empresas grandes que quieren una herramienta a medida.</p>
+      </div>
+      <div class="svc">
+        <article>
+          <span class="n">01</span>
+          <h3>Páginas web</h3>
+          <p>Desde una página de presentación hasta una web completa con varias secciones.</p>
+          <ul><li>Diseño a medida, sin plantillas genéricas</li><li>Adaptada a móvil, tablet y ordenador</li><li>Formulario, WhatsApp y mapa</li><li>SEO básico y alta en Google</li></ul>
+        </article>
+        <article>
+          <span class="n">02</span>
+          <h3>Aplicaciones</h3>
+          <p>Herramientas web para tus clientes o tu equipo: reservas, áreas privadas, calculadoras o catálogos.</p>
+          <ul><li>Funciona en móvil y ordenador</li><li>Inicio de sesión con Google</li><li>Se instala como app en el móvil</li><li>Presupuesto cerrado tras ver el caso</li></ul>
+        </article>
+        <article>
+          <span class="n">03</span>
+          <h3>Contenido</h3>
+          <p>Imagen y publicaciones para que tu marca se vea igual de bien en la web y en redes.</p>
+          <ul><li>Publicaciones y carruseles para Instagram</li><li>Textos para tu web</li><li>Gráficos y banners</li><li>Plan mensual de contenido</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="trabajos" class="rule">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Trabajos</span>
+        <h2>Hechos y publicados</h2>
+        <p>Nuestros primeros proyectos son nuestros propios productos: están en funcionamiento y puedes probarlos ahora.</p>
+      </div>
+      <div class="work">
+        <article>
+          <div class="frame">
+            <div class="bar"><i></i><i></i><i></i><span>synkvisualstudio.netlify.app</span></div>
+            <img src="/digital/img/web-synk.webp" width="1600" height="1000" loading="lazy" alt="Portada de la web de SYNK Interiores">
+          </div>
+          <h3>Web de SYNK Interiores</h3>
+          <p>Web de un estudio de diseño de interiores con comparadores antes y después, precios, preguntas frecuentes y textos legales completos.</p>
+          <div class="tags"><span>Web</span><span>Diseño</span><span>Textos</span></div>
+          <a class="more" href="/">Ver la web</a>
+        </article>
+        <article>
+          <div class="frame">
+            <div class="bar"><i></i><i></i><i></i><span>synkvisualstudio.netlify.app/app</span></div>
+            <img src="/digital/img/app-synk.webp" width="1600" height="1000" loading="lazy" alt="Pantalla principal de la app SYNK Studio en el ordenador">
+          </div>
+          <h3>App SYNK Studio</h3>
+          <p>Aplicación con inteligencia artificial para rediseñar una estancia a partir de una foto. Inicio de sesión con Google, planes de pago y se instala en el móvil.</p>
+          <div class="tags"><span>App</span><span>IA</span><span>Pagos</span></div>
+          <a class="more" href="https://synkvisualstudio.netlify.app/app/">Probar la app</a>
+        </article>
+      </div>
+
+      <div class="head" style="margin-top:clamp(56px,8vw,96px)">
+        <span class="label">Ejemplos por sector</span>
+        <h2>Así podría quedar la tuya</h2>
+        <p>Tres webs de ejemplo para negocios ficticios. Cada negocio tiene su propio diseño: nada de plantillas repetidas.</p>
+      </div>
+      <div class="demos">
+        <article>
+          <a class="frame" href="/digital/demo/bar/"><div class="bar"><i></i><i></i><i></i><span>Bar de tapas y vermut</span></div><img src="/digital/img/demo-bar.webp" width="1200" height="750" loading="lazy" alt="Web de ejemplo para un bar de tapas, en tonos crema y granate"></a>
+          <h3>Bar y restaurante</h3>
+          <p>Carta por secciones, horario de hoy destacado y reserva de mesa.</p>
+          <a class="more" href="/digital/demo/bar/">Ver ejemplo</a>
+        </article>
+        <article>
+          <a class="frame" href="/digital/demo/barberia/"><div class="bar"><i></i><i></i><i></i><span>Barbería</span></div><img src="/digital/img/demo-barberia.webp" width="1200" height="750" loading="lazy" alt="Web de ejemplo para una barbería, en negro y amarillo"></a>
+          <h3>Barbería y peluquería</h3>
+          <p>Precios claros, equipo y cita online eligiendo servicio, barbero y hora.</p>
+          <a class="more" href="/digital/demo/barberia/">Ver ejemplo</a>
+        </article>
+        <article>
+          <a class="frame" href="/digital/demo/taller/"><div class="bar"><i></i><i></i><i></i><span>Taller mecánico</span></div><img src="/digital/img/demo-taller.webp" width="1200" height="750" loading="lazy" alt="Web de ejemplo para un taller mecánico, en blanco, azul y naranja"></a>
+          <h3>Taller mecánico</h3>
+          <p>Servicios con precio orientativo, aviso de ITV y presupuesto online.</p>
+          <a class="more" href="/digital/demo/taller/">Ver ejemplo</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso" class="rule">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Proceso</span>
+        <h2>De tu mensaje a tu web publicada</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="n">01</span><h3>Nos cuentas tu negocio</h3><p>Qué haces, a quién vendes y qué quieres que hagan tus clientes al entrar.</p></div>
+        <div class="step"><span class="n">02</span><h3>Precio cerrado</h3><p>Te enviamos propuesta, plazo y precio. Empezamos cuando lo aceptas.</p></div>
+        <div class="step"><span class="n">03</span><h3>Diseño y ajustes</h3><p>Ves la web antes de publicarla y la ajustamos contigo.</p></div>
+        <div class="step"><span class="n">04</span><h3>Publicación</h3><p>La ponemos en internet con tu dominio y te enseñamos a cambiar lo básico.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="precios" class="rule">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Precios · oferta de apertura</span>
+        <h2>Elige el tamaño de tu proyecto</h2>
+        <p>Precios cerrados para los casos más habituales. Si el tuyo es distinto, escríbenos y te damos un precio concreto.</p>
+        <p class="launch">Oferta de apertura: 50 % de descuento en webs y apps.</p>
+      </div>
+      <div class="pk">
+        <div class="pack">
+          <h3>Landing</h3>
+          <p class="for">Para presentar tu negocio o un servicio concreto.</p>
+          <div class="price"><s>301,29 €</s>151,25 €<small>125 € + 21 % IVA · oferta de apertura</small></div>
+          <ul><li>1 página con varias secciones</li><li>Formulario, WhatsApp y mapa</li><li>Adaptada a móvil</li><li>SEO básico</li><li>1 ronda de ajustes</li></ul>
+          <a class="btn ghost" href="#contacto">Pedir una landing</a>
+        </div>
+        <div class="pack main">
+          <h3>Web completa</h3>
+          <p class="for">Para empresas que necesitan explicar varios servicios.</p>
+          <div class="price"><s>664,29 €</s>332,75 €<small>275 € + 21 % IVA · oferta de apertura · hasta 5 secciones</small></div>
+          <ul><li>Todo lo de la landing</li><li>Hasta 5 páginas: inicio, servicios, nosotros, trabajos y contacto</li><li>Textos legales básicos</li><li>Alta en Google</li><li>2 rondas de ajustes</li></ul>
+          <a class="btn" href="#contacto">Pedir mi web</a>
+        </div>
+        <div class="pack">
+          <h3>App o tienda online</h3>
+          <p class="for">Para reservas, catálogos, áreas privadas o venta online.</p>
+          <div class="price"><s>1.197,90 €</s>desde 598,95 €<small>495 € + 21 % IVA · oferta de apertura</small></div>
+          <ul><li>Proyecto a medida</li><li>Funciona en móvil y ordenador</li><li>Inicio de sesión y pagos si los necesitas</li><li>Presupuesto cerrado tras ver el caso</li></ul>
+          <a class="btn ghost" href="#contacto">Pedir presupuesto</a>
+        </div>
+      </div>
+
+      <div class="extras">
+        <div><div><h3>Mantenimiento</h3><p>Cambios de textos y fotos, copias de seguridad y revisión mensual.</p></div><strong>35,09 €<small>/mes · 29 € + IVA</small></strong></div>
+        <div><div><h3>Contenido para redes</h3><p>12 publicaciones al mes con diseño y texto, listas para publicar.</p></div><strong>180,29 €<small>/mes · 149 € + IVA</small></strong></div>
+        <div><div><h3>Dominio propio</h3><p>Te ayudamos a registrar tunegocio.es o .com. El dominio lo paga y es del cliente.</p></div><strong>coste del proveedor</strong></div>
+      </div>
+      <p class="note">Precios con el 21 % de IVA incluido. La oferta de apertura no se suma a otros descuentos. El precio tachado es el precio habitual. Pago: 50 % al encargar y 50 % antes de publicar. El dominio y los servicios de terceros que necesite el proyecto se pagan aparte, a nombre del cliente.</p>
+    </div>
+  </section>
+
+  <section class="rule">
+    <div class="wrap">
+      <div class="head"><span class="label">Preguntas</span><h2>Antes de escribirnos</h2></div>
+      <div class="faq">
+        <details><summary>¿La web será mía?</summary><p>Sí. Una vez pagada, la web, los textos y el dominio son tuyos. Si un día quieres llevártela a otro sitio, te damos los archivos.</p></details>
+        <details><summary>¿Qué necesito para empezar?</summary><p>El nombre de tu negocio, qué ofreces, tu logo si lo tienes y algunas fotos. Si no tienes textos, te los escribimos nosotros.</p></details>
+        <details><summary>¿Cuánto tarda?</summary><p>Una landing, de 5 a 7 días laborables. Una web completa, de 2 a 3 semanas. Una app depende del caso y te damos el plazo en el presupuesto.</p></details>
+        <details><summary>¿Trabajáis con empresas de fuera de Lleida?</summary><p>Sí. Trabajamos a distancia con empresas de toda España.</p></details>
+        <details><summary>¿Hay cuotas obligatorias?</summary><p>No. El mantenimiento es opcional. Si prefieres hacer tú los cambios, te enseñamos cómo.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact rule">
+    <div class="wrap">
+      <span class="label">Contacto</span>
+      <h2 style="margin-top:14px">Cuéntanos qué necesitas</h2>
+      <ul class="send">
+        <li>A qué se dedica tu empresa y dónde trabaja.</li>
+        <li>Si quieres una web, una app o contenido, y si ya tienes algo hecho.</li>
+        <li>Para cuándo lo necesitas.</li>
+        <li>Te respondemos con una propuesta y un precio cerrado.</li>
+      </ul>
+      <div class="mail">
+        <code id="mailtext">synkvisual@gmail.com</code>
+        <button class="btn" type="button" id="copy">Copiar correo</button>
+        <a class="btn ghost" href="mailto:synkvisual@gmail.com?subject=Presupuesto%20SYNK%20Digital">Escribir correo</a>
+        <a class="btn ghost" href="https://www.instagram.com/synkvisual/">Instagram</a>
+        <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61595700734420">Facebook</a>
+      </div>
+      <p id="copied" role="status"></p>
+      <p class="consent">Al escribirnos aceptas que usemos tus datos para responderte, según nuestra <a href="/#privacidad">política de privacidad</a>. Antes de contratar, consulta las <a href="/#condiciones">condiciones y el derecho de desistimiento</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 SYNK Digital · una línea de SYNK</span>
+    <span><a href="/#aviso-legal">Aviso legal</a><a href="/#privacidad">Privacidad</a><a href="/#cookies">Cookies</a><a href="/#condiciones">Condiciones</a></span>
+    <span><a href="/">SYNK Interiores</a><a href="https://www.instagram.com/synkvisual/">Instagram</a><a href="https://www.facebook.com/profile.php?id=61595700734420">Facebook</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy'),out=document.getElementById('copied'),t=document.getElementById('mailtext');
+  btn.addEventListener('click',function(){
+    var text=t.textContent.trim();
+    function fallback(){var s=window.getSelection(),r=document.createRange();r.selectNodeContents(t);s.removeAllRanges();s.addRange(r);out.textContent='Selecciona y copia el correo';}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){out.textContent='Correo copiado';},fallback);}else{fallback();}
+  });
+})();
+</script>
+</body>
+</html>
